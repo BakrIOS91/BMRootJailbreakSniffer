@@ -1,0 +1,76 @@
+group 'com.emrys.rjsniffer.rjsniffer'
+version '1.0'
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+/*    dependencies {
+        classpath("com.android.tools.build:gradle:8.7.0")
+    }*/
+}
+
+rootProject.allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+apply plugin: "com.android.library"
+
+android {
+
+    if (project.android.hasProperty("namespace")) {
+        namespace "com.emrys.rjsniffer.rjsniffer"
+    }
+
+    compileSdk 34
+
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    defaultConfig {
+        minSdk = 21
+    }
+
+
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt"
+        }
+    }
+
+
+
+    buildFeatures {
+        aidl true
+
+    }
+
+    dependencies {
+        testImplementation("junit:junit:4.13.2")
+        testImplementation("org.mockito:mockito-core:5.0.0")
+        implementation 'com.scottyab:rootbeer-lib:0.1.1'
+    }
+
+    testOptions {
+        unitTests.all {
+            testLogging {
+                events "passed", "skipped", "failed", "standardOut", "standardError"
+                outputs.upToDateWhen {false}
+                showStandardStreams = true
+            }
+        }
+    }
+    ndkVersion '29.0.14033849'
+
+
+}
+
+

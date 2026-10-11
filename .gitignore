@@ -1,0 +1,9 @@
+.dart_tool/
+build/
+.packages
+pubspec.lock
+android/.cxx/
+android/.gradle/
+android/local.properties
+.swiftpm/
+.DS_Store
