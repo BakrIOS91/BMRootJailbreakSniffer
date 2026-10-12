@@ -2,6 +2,8 @@ import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 import 'rjsniffer_method_channel.dart';
 
+/// The interface that platform implementations of `bm_root_jailbreak_sniffer`
+/// must extend.
 abstract class RjsnifferPlatform extends PlatformInterface {
   /// Constructs a RjsnifferPlatform.
   RjsnifferPlatform() : super(token: _token);
@@ -23,14 +25,17 @@ abstract class RjsnifferPlatform extends PlatformInterface {
     _instance = instance;
   }
 
+  /// Whether the device is rooted or jailbroken.
   Future<bool?> amICompromised() async {
     throw UnimplementedError('amICompromised() has not been implemented.');
   }
 
+  /// Whether the app is running on an emulator or simulator.
   Future<bool?> amIEmulator() async {
     throw UnimplementedError('amIEmulator() has not been implemented.');
   }
 
+  /// Whether a debugger is attached to the app process.
   Future<bool?> amIDebugged() async {
     throw UnimplementedError('amIDebugged() has not been implemented.');
   }

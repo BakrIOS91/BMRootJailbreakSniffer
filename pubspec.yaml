@@ -1,6 +1,6 @@
 name: bm_root_jailbreak_sniffer
 description: Root detection (Magisk Hide aware) on Android and jailbreak detection on iOS. Fork of root_jailbreak_sniffer with Swift Package Manager support on iOS.
-version: 1.1.5
+version: 1.1.6
 homepage: https://github.com/BakrIOS91/BMRootJailbreakSniffer
 
 environment:

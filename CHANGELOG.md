@@ -1,3 +1,6 @@
+## 1.1.6
+* Added an `example/` app and dartdoc comments for the public API.
+
 ## 1.1.5
 * Forked from root_jailbreak_sniffer 1.1.4 (Apache-2.0) as bm_root_jailbreak_sniffer. iOS now ships a Swift Package Manager manifest (`ios/bm_root_jailbreak_sniffer/Package.swift`); CocoaPods keeps working. The Dart API, method channel and Android code are unchanged.
 
